@@ -1,49 +1,59 @@
-# FoodFlow — Next.js + Redux Toolkit
+# FoodFlow — декомпозированный Next.js + Redux Toolkit проект
 
-Русскоязычный SaaS-лендинг для ресторанной платформы. Проект вдохновлён структурой современных food-tech сайтов, но использует самостоятельный бренд, дизайн и тексты.
+Полная переработка исходного demo-лендинга с feature-oriented архитектурой.
 
 ## Стек
-- Next.js (App Router)
-- React
+- Next.js 15 App Router
+- React 19
 - TypeScript
-- Redux Toolkit
-- React Redux
-- CSS без UI-фреймворков
+- Redux Toolkit + React Redux
+- CSS Modules
 
-## Redux используется для
-- модального окна заявки;
-- мобильного меню;
-- отраслевых вкладок;
-- калькулятора тарифа.
+## Архитектура
+
+```text
+src/
+├── app/        # маршрутизация, providers, metadata, sitemap, robots
+├── widgets/    # крупные секции страницы
+├── features/   # пользовательские действия и глобальное состояние
+├── entities/   # бизнес-сущности + data/model/ui
+├── shared/     # переиспользуемый UI, config, lib, types
+└── store/      # Redux store + typed hooks
+```
+
+### Widgets
+Header, Hero, Clients, Metrics, Features, BusinessFormats, Cases, PriceCalculator, FAQ, CTA, Footer.
+
+### Features
+- modal — управление demo-модалкой
+- mobile-menu — мобильная навигация
+- business-format — переключение сценария Пицца/Роллы/Кофейни/Сети
+- calculator — состояние и расчёт тарифа
+- lead-form — форма заявки и API-слой
+
+### Entities
+Client, Metric, Feature, Case, FAQ.
+
+### Shared UI
+Button, Logo, Eyebrow, SectionTitle.
+
+## Принцип
+`app → widgets → features/entities → shared`.
+Статические данные не хранятся в Redux. Redux используется только для изменяемого глобального состояния.
 
 ## Запуск
 ```bash
 npm install
 npm run dev
 ```
-Откройте http://localhost:3000
 
-## Сборка
+## Production check
 ```bash
 npm run build
-npm start
-```
-
-## GitHub
-```bash
-git init
-git add .
-git commit -m "Initial FoodFlow landing"
-git branch -M main
-git remote add origin https://github.com/USERNAME/foodflow-next-redux.git
-git push -u origin main
 ```
 
 ## Vercel
-1. Загрузите проект на GitHub.
-2. В Vercel нажмите **Add New → Project**.
-3. Импортируйте репозиторий.
-4. Framework Preset определится как Next.js.
-5. Нажмите **Deploy**.
+Импортируйте репозиторий в Vercel. Framework Preset определяется как Next.js автоматически.
 
-Переменные окружения для демо-версии не нужны.
+## Важно
+`features/lead-form/api/submitLead.ts` сейчас содержит демонстрационный adapter. Его можно заменить на реальный `/api/leads`, Telegram, email, amoCRM или Bitrix24 без изменения UI формы.
