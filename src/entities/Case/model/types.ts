@@ -1,0 +1,1 @@
+export interface Case { id: number; tag: string; title: string; metric: string; description: string; theme: 'dark' | 'orange' }
