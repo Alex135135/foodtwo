@@ -1,0 +1,20 @@
+.item {
+    border-top: 1px solid #bbb;
+    padding: 25px 0;
+}
+
+.item:last-child {
+    border-bottom: 1px solid #bbb;
+}
+
+.item summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item p {
+    color: var(--muted);
+}
