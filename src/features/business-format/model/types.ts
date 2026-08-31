@@ -1,0 +1,1 @@
+export type BusinessFormat = 'pizza' | 'rolls' | 'coffee' | 'chain';
