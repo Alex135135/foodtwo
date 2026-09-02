@@ -1,0 +1,1 @@
+export interface CalculatorState { locations: number; orders: number; app: boolean; loyalty: boolean }

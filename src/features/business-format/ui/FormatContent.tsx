@@ -30,6 +30,7 @@ export default function FormatContent() {
                     Повторные заказы <b>+32%</b>
                 </div>
             </div>
+
         </div>
     );
 }
