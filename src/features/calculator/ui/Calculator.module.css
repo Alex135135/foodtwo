@@ -1,0 +1,87 @@
+.box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 28px;
+}
+
+
+.box label {
+    display: block;
+    margin-bottom: 30px;
+}
+
+
+.box label b {
+    float: right;
+}
+
+
+.box input[type="range"] {
+    width: 100%;
+    accent-color: var(--orange);
+    margin-top: 14px;
+}
+
+
+.switch {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    background: #fff;
+    padding: 16px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+
+.switch i {
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    border-radius: 99px;
+    background: #bbb;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: relative;
+}
+
+.switch i:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #171716;
+    border-radius: 50%;
+    left: 2px;
+    top: 2px;
+}
+
+
+.on i {
+    background: var(--lime);
+}
+
+
+.on i:after {
+    left: 16px;
+}
+
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 35px 0;
+}
+
+
+.total b {
+    font-size: 32px;
+}
+
+
+@media (max-width: 600px) {
+    .box {
+        padding: 24px;
+    }
+}
