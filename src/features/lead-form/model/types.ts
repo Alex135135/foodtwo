@@ -1,0 +1,1 @@
+export interface LeadFormData { name: string; phone: string; company?: string }

@@ -1,0 +1,12 @@
+.form {
+    display: grid;
+    gap: 10px;
+    margin: 30px 0 15px
+}
+
+.form input {
+    padding: 16px;
+    border: 1px solid #bbb;
+    border-radius: 12px;
+    background: #fff
+}
