@@ -1,0 +1,31 @@
+.button {
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    padding: 14px 22px;
+    background: transparent;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.primary {
+    background: var(--lime);
+    border-color: var(--lime);
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+}
+
+.ghost {
+    background: transparent;
+}
+
+.dark {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+}
+
+.full {
+    width: 100%;
+}
