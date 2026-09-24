@@ -1,0 +1,15 @@
+.cta {
+    background: var(--lime);
+    padding: 110px 4vw;
+    text-align: center
+}
+
+.action {
+    margin-top: 40px
+}
+
+@media(max-width:600px) {
+    .cta {
+        padding: 80px 20px
+    }
+}
