@@ -1,0 +1,26 @@
+.section {
+    padding: 120px 4vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    background: #e7e2d7
+}
+
+.section>div:first-child p {
+    color: var(--muted);
+    max-width: 500px;
+    line-height: 1.6
+}
+
+@media(max-width:900px) {
+    .section {
+        grid-template-columns: 1fr;
+        gap: 40px
+    }
+}
+
+@media(max-width:600px) {
+    .section {
+        padding: 80px 20px
+    }
+}
